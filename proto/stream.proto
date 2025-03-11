@@ -1,0 +1,13 @@
+syntax = "proto3";
+package stream;
+
+option go_package = "./proto/go";
+
+service StreamService {
+    rpc GetStream(Empty) returns (stream Message) {}
+}
+
+message Empty {}
+message Message {
+    string data = 1;
+}
